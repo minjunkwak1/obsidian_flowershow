@@ -1,5 +1,14 @@
 ---
+tags: 
+parent: Thermomechanical homogenization of fiber-reinforced composite materials using artificial intelligence
+collections: null
+quickshare-date: 2024-10-30 19:13:03
 dg-publish: true
+quickshare-url: https://noteshare.space/note/cm2vpxldw533001mwxl8hhjrf#Y7Hp8TPYBZVtyvheA7zTfh4rP74hXjbXTf1qy5cwVDo
+$version: 37646
+$libraryID: 1
+$itemKey: 8T6J4MFW
+share_updated: null
 ---
 # Orientation Distribution Tensor 부분 정리
 ## <span class="highlight" data-annotation="%7B%22attachmentURI%22%3A%22http%3A%2F%2Fzotero.org%2Fusers%2F10857963%2Fitems%2FII3D7BDP%22%2C%22annotationKey%22%3A%228FDWQN5Z%22%2C%22color%22%3A%22%23ffd400%22%2C%22pageLabel%22%3A%2261%22%2C%22position%22%3A%7B%22pageIndex%22%3A73%2C%22rects%22%3A%5B%5B85.104%2C662.168%2C401.601%2C676.425%5D%2C%5B85.104%2C640.928%2C451.354%2C655.185%5D%5D%7D%2C%22citationItem%22%3A%7B%22uris%22%3A%5B%22http%3A%2F%2Fzotero.org%2Fusers%2F10857963%2Fitems%2FAFQ8FMKK%22%5D%2C%22locator%22%3A%2261%22%7D%7D" ztype="zhighlight"><a href="zotero://open-pdf/library/items/II3D7BDP?page=74&#x26;annotation=8FDWQN5Z">“Chapter 3. Machine learning-assisted two-step homogenization of SFRP using pseudograin approach”</a></span>
@@ -55,9 +64,9 @@ fiber orienation 의 unit vector p는 아래와 같이 표현 가능함(θ및 φ
     *   $a_{ij}=\sum_kP_{ik}P_{jk}\psi(\mathbb{P}_k)$ .
     *   $S=-\sum_k\psi(\mathbb{P}_k)\ln(\psi(\mathbb{P}_k))$ .
     *   이를 ME 방법에선 minimization procedure를 통해 S를 최대화하는 α와 β를 찾게 되며, 아래 두 objective function을 동시에 최소화하는 문제가 됨
-        *   $f_{1}(\alpha,\beta)\:=\:\sum_{ij}\left(\frac{a_{ij}^{given}-a_{ij}(\:\alpha,\beta)}{a_{ij}^{given}}\right)^2$.
+        *   $f_{1}(\alpha,\beta)\:=\:\sum_{ij}\left(\frac{a_{ij}^{given}-a_{ij}(\:\alpha,\beta)}{a_{ij}^{given}}\right)^2$ .
             *   α, β로 계산된 orientation tensor가 target orientation tensor와 같아야 함.
-        *     $f_{2}(\:\alpha,\beta)\:=\left(\frac{S_{max}^{global}-S(\:\alpha,\beta)}{S_{max}^{global}}\right)^{2}$ .
+        *     $f_{2}(\:\alpha,\beta)\:=\left(\frac{S_{max}^{global}-S(\:\alpha,\beta)}{S_{max}^{global}}\right)^{2}$.
             *   orientation tensor 가 1/3,1/3,1/3일 때인 global maximum entropy에 최대한 가깝도록.
 ### 유사결정립 분해
 위의 과정을 따라 재구성 절차가 완료되면, ODF는 단방향으로 정렬된 짧은 섬유로 이루어진 여러 개의 유사결정립으로 분해가 필요함. 여기에 K-means clustering을 사용함. (공간 상에서 유사한 위치에 있는 것들 끼리 k개의 묶음으로 만드는 기계학습 방법)
@@ -65,22 +74,12 @@ fiber orienation 의 unit vector p는 아래와 같이 표현 가능함(θ및 φ
 ## Results and Discussion
 ### ODF 재구축
 *   4차 icosphere가 사용되어 총 5120개의 triangular mesh가 사용되었고, 대칭성을 고려해서 전체 삼각 메쉬의 절반만 사용함.
-*   orientation tensor의 경우 좌표변환을 통해 off diagonal 성분을 없앨 수 있으므로 대각성분만을 고려함.
-![\<img alt="" data-attachment-key="CD3YAFFV" data-annotation="%7B%22attachmentURI%22%3A%22http%3A%2F%2Fzotero.org%2Fusers%2F10857963%2Fitems%2FII3D7BDP%22%2C%22annotationKey%22%3A%222BQYI3PU%22%2C%22color%22%3A%22%23ffd400%22%2C%22pageLabel%22%3A%2282%22%2C%22position%22%3A%7B%22pageIndex%22%3A94%2C%22rects%22%3A%5B%5B142.44%2C432%2C393.84%2C679.2%5D%5D%7D%2C%22citationItem%22%3A%7B%22uris%22%3A%5B%22http%3A%2F%2Fzotero.org%2Fusers%2F10857963%2Fitems%2FAFQ8FMKK%22%5D%2C%22locator%22%3A%2282%22%7D%7D" width="419" height="412" src="attachments/CD3YAFFV.png" ztype="zimage">](attachments/CD3YAFFV.png)
-여기선 예시인지는 잘 모르겠는데, orientation tensor를 \[0.7,0.15,0.15]로 두고 α와 β를 찾음. 범위 내 랜덤한 α, β에서 시작해 Pareto optimization 결과 아래와 같은 결과
-![\<img alt="" data-attachment-key="DPQ3AQRH" width="600" height="488.3502736512901" src="attachments/DPQ3AQRH.png" ztype="zimage">](attachments/DPQ3AQRH.png)
-여기서 orientation tensor에 대한 최적화 함수인 objective function1을 최소화하는게 더 중요하므로(재구축 ODF로 부터 원래 시작 orientation tensor는 정확하게 나와야 함), 좌상단에 있는 값을 사용함.
-![\<img alt="" data-attachment-key="Q8R25FVR" width="600" height="605.2580331061343" src="attachments/Q8R25FVR.png" ztype="zimage">](attachments/Q8R25FVR.png)
-해당 orientation tensor로부터 얻어진 α, β로 만든 ODF. 평균 방향인 0.7,0.15,0.15를 고려했을 때 1축방향으로 분포가 높은 것을 확인할 수 있고, y,z 평면 상에서 대칭을 이룸을 확인할 수 있다.
+*   orientation tensor의 경우 좌표변환을 통해 off diagonal 성분을 없앨 수 있으므로 대각성분만을 고려함.![\<img alt="" data-attachment-key="CD3YAFFV" data-annotation="%7B%22attachmentURI%22%3A%22http%3A%2F%2Fzotero.org%2Fusers%2F10857963%2Fitems%2FII3D7BDP%22%2C%22annotationKey%22%3A%222BQYI3PU%22%2C%22color%22%3A%22%23ffd400%22%2C%22pageLabel%22%3A%2282%22%2C%22position%22%3A%7B%22pageIndex%22%3A94%2C%22rects%22%3A%5B%5B142.44%2C432%2C393.84%2C679.2%5D%5D%7D%2C%22citationItem%22%3A%7B%22uris%22%3A%5B%22http%3A%2F%2Fzotero.org%2Fusers%2F10857963%2Fitems%2FAFQ8FMKK%22%5D%2C%22locator%22%3A%2282%22%7D%7D" width="419" height="412" src="attachments/CD3YAFFV.png" ztype="zimage">](attachments/CD3YAFFV.png)여기선 예시인지는 잘 모르겠는데, orientation tensor를 \[0.7,0.15,0.15]로 두고 α와 β를 찾음. 범위 내 랜덤한 α, β에서 시작해 Pareto optimization 결과 아래와 같은 결과![\<img alt="" data-attachment-key="DPQ3AQRH" width="600" height="488.3502736512901" src="attachments/DPQ3AQRH.png" ztype="zimage">](attachments/DPQ3AQRH.png)여기서 orientation tensor에 대한 최적화 함수인 objective function1을 최소화하는게 더 중요하므로(재구축 ODF로 부터 원래 시작 orientation tensor는 정확하게 나와야 함), 좌상단에 있는 값을 사용함.![\<img alt="" data-attachment-key="Q8R25FVR" width="600" height="605.2580331061343" src="attachments/Q8R25FVR.png" ztype="zimage">](attachments/Q8R25FVR.png)해당 orientation tensor로부터 얻어진 α, β로 만든 ODF. 평균 방향인 0.7,0.15,0.15를 고려했을 때 1축방향으로 분포가 높은 것을 확인할 수 있고, y,z 평면 상에서 대칭을 이룸을 확인할 수 있다.
 ### 유사결정립 분해
 *   여기선 6차 icosphere를 사용하여,  81920 삼각 메쉬가 사용됨. 이 때 대칭성을 고려해 절반만 사용함
-*   각 mesh에서 방향단위벡터가 있으므로 총 40960개의 방향이 존재함.  이 떄 한 ODF에 대해서 각 방향별로 분포에 대한 weight가 존재할 것.
-$\mathbb{X}=\begin{pmatrix}\mathbb{P}_1,\mathbb{P}_2,&\cdots,\mathbb{P}_{40960}\end{pmatrix}$  .
-$\mathbb{W}=\begin{pmatrix}\psi(\mathbb{P}_1),\psi(\mathbb{P}_2),\cdots,\psi(\mathbb{P}_{40960})\end{pmatrix}$ .
-*   만약 위의 0.7, 0.15, 0.15 케이스에서 각 방향에 대한 weight를 카테시안이 아닌 θ φ 공간 상에서 나타내면 아래와 같음.
-![\<img alt="" data-attachment-key="YGQP4VRW" width="457" height="409" src="attachments/YGQP4VRW.png" ztype="zimage">](attachments/YGQP4VRW.png)
+*   각 mesh에서 방향단위벡터가 있으므로 총 40960개의 방향이 존재함.  이 떄 한 ODF에 대해서 각 방향별로 분포에 대한 weight가 존재할 것.$\mathbb{X}=\begin{pmatrix}\mathbb{P}_1,\mathbb{P}_2,&\cdots,\mathbb{P}_{40960}\end{pmatrix}$ .$\mathbb{W}=\begin{pmatrix}\psi(\mathbb{P}_1),\psi(\mathbb{P}_2),\cdots,\psi(\mathbb{P}_{40960})\end{pmatrix}$.
+*   만약 위의 0.7, 0.15, 0.15 케이스에서 각 방향에 대한 weight를 카테시안이 아닌 θ φ 공간 상에서 나타내면 아래와 같음.![\<img alt="" data-attachment-key="YGQP4VRW" width="457" height="409" src="attachments/YGQP4VRW.png" ztype="zimage">](attachments/YGQP4VRW.png)
 *   k means clustering은 대칭성을 고려해 1사분면 내에서만 이루어지며, 각 data point간 유클리드 거리를 고려하여 할당됨.
-*   각 cluster에서의 ODF의 합은 유사결정립의 volume fraction이 되며, centroid 값이 해당 유사결정립의 대표 orientation이 됨.
-$\begin{array}{cccc}\hline\textbf{Pseudograin}&\textbf{Equivalent orientation}&\textbf{Volume fraction}\\\hline\text{PG1}&(0.24,0.19)&58.36&\%\\\hline\\\text{PG2}&(0.29,0.65)&22.96&\%\\\hline\\\text{PG3}&(0.93,0.40)&18.68&\%\\\hline\end{array}$ .
-![\<img alt="" data-attachment-key="4MJKGYDZ" width="431" height="400" src="attachments/4MJKGYDZ.png" ztype="zimage">](attachments/4MJKGYDZ.png)
+*   각 cluster에서의 ODF의 합은 유사결정립의 volume fraction이 되며, centroid 값이 해당 유사결정립의 대표 orientation이 됨.$\begin{array}{cccc}\hline\textbf{Pseudograin}&\textbf{Equivalent orientation}&\textbf{Volume fraction}\\\hline\text{PG1}&(0.24,0.19)&58.36&\%\\\hline\\\text{PG2}&(0.29,0.65)&22.96&\%\\\hline\\\text{PG3}&(0.93,0.40)&18.68&\%\\\hline\end{array}$.![\<img alt="" data-attachment-key="4MJKGYDZ" width="431" height="400" src="attachments/4MJKGYDZ.png" ztype="zimage">](attachments/4MJKGYDZ.png)
+<img src="/site/img/user/Minjun_Kwak/3. 연구 과제/현대차-2024/attachments/4MJKGYDZ.png"/>
 ### 인공신경망 구축
