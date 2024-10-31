@@ -1,6 +1,7 @@
 ---
 quickshare-date: 2024-10-30 19:01:25
-quickshare-url: "https://noteshare.space/note/cm2vpimj9525501mwhcd1rroe#yRd2H8dOAbIiUS4rvZ7AacS/JdUPjgYWkUNEVeKVF7o"
+quickshare-url: https://noteshare.space/note/cm2vpimj9525501mwhcd1rroe#yRd2H8dOAbIiUS4rvZ7AacS/JdUPjgYWkUNEVeKVF7o
+dg-publish: true
 ---
 PPT등 자료를 구성할 때 수식을 많이 입력하는 경우 PPT 내장 수식 기능을 사용하면 수식이 길어지면서 PPT 구동이 매우 무거워지는 문제가 발생함. 연구실에서 구독해 사용중인 mathtype을 이용할 수도 있으나, 프로그램 자체의 자유도나 다른 운영체제와의 안정성 측면에서 단점이 존재함. 이를 해결하기 위한 방법으로 수식 입력에 최적화된 언어인 LaTeX를 이용한 입력방식이 있음. IguanaTeX는 LaTeX를 기반으로 PPT에 수식을 입력할 수 있도록 해주는 PowerPoint add-on임.
 
