@@ -1,3 +1,6 @@
+---
+dg-publish: true
+---
 균질화에서 너무 stiff해지는 것을 방지하고자 도입한 개념
 
 The main advantages of this promising approach is that a single formulation should enable to predict accurately the macroscopic response of a wide range of non linear materials (viscoelastic, elasto-(visco)plastic, etc.).
