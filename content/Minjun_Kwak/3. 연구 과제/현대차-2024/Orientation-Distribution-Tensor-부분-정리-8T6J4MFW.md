@@ -81,6 +81,7 @@ fiber orienation 의 unit vector p는 아래와 같이 표현 가능함(θ및 φ
 *   각 mesh에서 방향단위벡터가 있으므로 총 40960개의 방향이 존재함.  이 떄 한 ODF에 대해서 각 방향별로 분포에 대한 weight가 존재할 것.$\mathbb{X}=\begin{pmatrix}\mathbb{P}_1,\mathbb{P}_2,&\cdots,\mathbb{P}_{40960}\end{pmatrix}$ .$\mathbb{W}=\begin{pmatrix}\psi(\mathbb{P}_1),\psi(\mathbb{P}_2),\cdots,\psi(\mathbb{P}_{40960})\end{pmatrix}$.
 *   만약 위의 0.7, 0.15, 0.15 케이스에서 각 방향에 대한 weight를 카테시안이 아닌 θ φ 공간 상에서 나타내면 아래와 같음.![\<img alt="" data-attachment-key="YGQP4VRW" width="457" height="409" src="attachments/YGQP4VRW.png" ztype="zimage">](attachments/YGQP4VRW.png)
 *   k means clustering은 대칭성을 고려해 1사분면 내에서만 이루어지며, 각 data point간 유클리드 거리를 고려하여 할당됨.
-*   각 cluster에서의 ODF의 합은 유사결정립의 volume fraction이 되며, centroid 값이 해당 유사결정립의 대표 orientation이 됨.$\begin{array}{cccc}\hline\textbf{Pseudograin}&\textbf{Equivalent orientation}&\textbf{Volume fraction}\\\hline\text{PG1}&(0.24,0.19)&58.36&\%\\\hline\\\text{PG2}&(0.29,0.65)&22.96&\%\\\hline\\\text{PG3}&(0.93,0.40)&18.68&\%\\\hline\end{array}$.![\<img alt="" data-attachment-key="4MJKGYDZ" width="431" height="400" src="attachments/4MJKGYDZ.png" ztype="zimage">](attachments/4MJKGYDZ.png)
+*   각 cluster에서의 ODF의 합은 유사결정립의 volume fraction이 되며, centroid 값이 해당 유사결정립의 대표 orientation이 됨.$\begin{array}{cccc}\hline\textbf{Pseudograin}&\textbf{Equivalent orientation}&\textbf{Volume fraction}\\\hline\text{PG1}&(0.24,0.19)&58.36&\%\\\hline\\\text{PG2}&(0.29,0.65)&22.96&\%\\\hline\\\text{PG3}&(0.93,0.40)&18.68&\%\\\hline\end{array}$.
+  ![\<img alt="" data-attachment-key="4MJKGYDZ" width="431" height="400" src="attachments/4MJKGYDZ.png" ztype="zimage">](attachments/4MJKGYDZ.png)
 ### 인공신경망 구축
 test
