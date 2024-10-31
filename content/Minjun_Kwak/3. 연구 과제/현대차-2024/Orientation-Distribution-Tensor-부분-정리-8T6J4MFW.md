@@ -83,3 +83,4 @@ fiber orienation 의 unit vector p는 아래와 같이 표현 가능함(θ및 φ
 *   k means clustering은 대칭성을 고려해 1사분면 내에서만 이루어지며, 각 data point간 유클리드 거리를 고려하여 할당됨.
 *   각 cluster에서의 ODF의 합은 유사결정립의 volume fraction이 되며, centroid 값이 해당 유사결정립의 대표 orientation이 됨.$\begin{array}{cccc}\hline\textbf{Pseudograin}&\textbf{Equivalent orientation}&\textbf{Volume fraction}\\\hline\text{PG1}&(0.24,0.19)&58.36&\%\\\hline\\\text{PG2}&(0.29,0.65)&22.96&\%\\\hline\\\text{PG3}&(0.93,0.40)&18.68&\%\\\hline\end{array}$.![\<img alt="" data-attachment-key="4MJKGYDZ" width="431" height="400" src="attachments/4MJKGYDZ.png" ztype="zimage">](attachments/4MJKGYDZ.png)
 ### 인공신경망 구축
+test
