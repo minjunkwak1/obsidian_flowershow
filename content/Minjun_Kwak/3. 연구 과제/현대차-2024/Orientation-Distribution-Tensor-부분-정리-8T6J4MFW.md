@@ -1,14 +1,15 @@
 ---
-tags: 
-parent: Thermomechanical homogenization of fiber-reinforced composite materials using artificial intelligence
+tags: []
+parent: 'Thermomechanical homogenization of fiber-reinforced composite materials using artificial intelligence'
 collections: null
-quickshare-date: 2024-10-30 19:13:03
+quickshare-date: 2024-10-30T19:13:03.000Z
 dg-publish: true
-quickshare-url: https://noteshare.space/note/cm2vpxldw533001mwxl8hhjrf#Y7Hp8TPYBZVtyvheA7zTfh4rP74hXjbXTf1qy5cwVDo
-$version: 37646
+quickshare-url: 'https://noteshare.space/note/cm2vpxldw533001mwxl8hhjrf#Y7Hp8TPYBZVtyvheA7zTfh4rP74hXjbXTf1qy5cwVDo'
+$version: 37647
 $libraryID: 1
 $itemKey: 8T6J4MFW
 share_updated: null
+
 ---
 # Orientation Distribution Tensor 부분 정리
 ## <span class="highlight" data-annotation="%7B%22attachmentURI%22%3A%22http%3A%2F%2Fzotero.org%2Fusers%2F10857963%2Fitems%2FII3D7BDP%22%2C%22annotationKey%22%3A%228FDWQN5Z%22%2C%22color%22%3A%22%23ffd400%22%2C%22pageLabel%22%3A%2261%22%2C%22position%22%3A%7B%22pageIndex%22%3A73%2C%22rects%22%3A%5B%5B85.104%2C662.168%2C401.601%2C676.425%5D%2C%5B85.104%2C640.928%2C451.354%2C655.185%5D%5D%7D%2C%22citationItem%22%3A%7B%22uris%22%3A%5B%22http%3A%2F%2Fzotero.org%2Fusers%2F10857963%2Fitems%2FAFQ8FMKK%22%5D%2C%22locator%22%3A%2261%22%7D%7D" ztype="zhighlight"><a href="zotero://open-pdf/library/items/II3D7BDP?page=74&#x26;annotation=8FDWQN5Z">“Chapter 3. Machine learning-assisted two-step homogenization of SFRP using pseudograin approach”</a></span>
@@ -81,5 +82,4 @@ fiber orienation 의 unit vector p는 아래와 같이 표현 가능함(θ및 φ
 *   만약 위의 0.7, 0.15, 0.15 케이스에서 각 방향에 대한 weight를 카테시안이 아닌 θ φ 공간 상에서 나타내면 아래와 같음.![\<img alt="" data-attachment-key="YGQP4VRW" width="457" height="409" src="attachments/YGQP4VRW.png" ztype="zimage">](attachments/YGQP4VRW.png)
 *   k means clustering은 대칭성을 고려해 1사분면 내에서만 이루어지며, 각 data point간 유클리드 거리를 고려하여 할당됨.
 *   각 cluster에서의 ODF의 합은 유사결정립의 volume fraction이 되며, centroid 값이 해당 유사결정립의 대표 orientation이 됨.$\begin{array}{cccc}\hline\textbf{Pseudograin}&\textbf{Equivalent orientation}&\textbf{Volume fraction}\\\hline\text{PG1}&(0.24,0.19)&58.36&\%\\\hline\\\text{PG2}&(0.29,0.65)&22.96&\%\\\hline\\\text{PG3}&(0.93,0.40)&18.68&\%\\\hline\end{array}$.![\<img alt="" data-attachment-key="4MJKGYDZ" width="431" height="400" src="attachments/4MJKGYDZ.png" ztype="zimage">](attachments/4MJKGYDZ.png)
-<img src="/site/img/user/Minjun_Kwak/3. 연구 과제/현대차-2024/attachments/4MJKGYDZ.png"/>
 ### 인공신경망 구축
